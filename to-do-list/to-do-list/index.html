@@ -2,12 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>To-Do-List</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="container">
+      <!-- sidebar/folder area -->
+      <aside class="sidebar">
+        <header id="sidebar-header">
+          <img src="./images/folder-multiple.svg" alt="folder-img" />
+          <h2>Folders</h2>
+        </header>
+        <div class="sidebar-body">
+          <div class="input-container">
+            <input type="text" value="" id="folder-name" />
+            <input type="submit" value="" />
+          </div>
+          <div class="card">
+            <div class="folder">
+              folder 1
+              <img
+                src="./images/delete-svgrepo-com.svg"
+                alt="delete-icon"
+                id="small-icon"
+              />
+            </div>
+            <div class="folder active">
+              folder 2<img
+                src="./images/delete-svgrepo-com.svg"
+                alt="delete-icon"
+                id="small-icon"
+              />
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- header/title area -->
+      <header class="header">
+        <h1>To-Do-List</h1>
+      </header>
+      <!-- main to do area -->
+      <main class="to-do"></main>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
