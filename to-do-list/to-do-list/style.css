@@ -68,7 +68,7 @@ body {
   gap: 1em;
 }
 
-input[type="submit"] {
+input[type="button"] {
   background: transparent url(./images/plus-thick.svg) no-repeat;
   border: none;
   cursor: pointer;
@@ -76,7 +76,7 @@ input[type="submit"] {
   height: 26px;
 }
 
-input[type="submit"]:hover {
+input[type="button"]:hover {
   scale: 1.2;
 }
 
@@ -104,21 +104,19 @@ input#folder-name:focus {
   align-self: center;
 }
 
-.folder {
+tr {
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 8px;
   margin: 15px;
-  border-color: black;
   padding: 10px;
 }
-
-.folder.active {
+.active {
   background: #f1b4d6;
 }
 
-.folder:hover {
+tr:hover {
   border: solid 5px;
   border-color: #eb86bf;
   cursor: pointer;
@@ -128,11 +126,128 @@ input#folder-name:focus {
   background: #eb86bf;
 }
 
-#small-icon {
-  height: 2em;
-  width: 2em;
+.delete-icon {
+  background: url(./images/delete-svgrepo-com.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  cursor: pointer;
 }
 
+.small-icon {
+  background: url(./images/edit-svgrepo-com.svg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 2rem;
+  width: 2rem;
+  border: none;
+  cursor: pointer;
+}
+
+.small-icon:hover {
+  cursor: pointer;
+}
+
+/* TASK BACKGROUND STYLING  */
 main {
   grid-area: 2 / 2 / 3 / 3;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.to-do-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: rgb(89, 87, 87);
+  overflow: auto;
+  flex: 0.9;
+  width: 95%;
+  align-self: center;
+}
+
+thead {
+  display: none;
+}
+
+/* GENERAL TASK ITEM STYLING  */
+
+.to-do-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 10px;
+  border: solid 1px;
+  justify-content: space-between;
+}
+
+thead > td:nth-child(1) {
+  width: 1rem;
+  padding-right: 1px;
+  margin-right: 1px;
+}
+
+thead > td:nth-child(2) {
+  width: 10rem;
+  margin-left: 1px;
+  padding-left: 1px;
+}
+thead > td:nth-child(3) {
+  width: 1rem;
+}
+
+thead > td:nth-child(4) {
+  width: 0.5rem;
+}
+thead > td:nth-child(5) {
+  width: 0.5rem;
+}
+/* PRIORITY TASK STYLING  */
+
+.to-do-item.low {
+  border-left: 10px solid green;
+}
+.to-do-item.medium {
+  border-left: 10px solid yellow;
+}
+.to-do-item.high {
+  border-left: 10px solid red;
+}
+
+/* ADD TASK STYLING  */
+.add-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+input.add-item-input:first-child {
+  width: 70%;
+  height: 90%;
+  border-radius: 5px;
+  border: solid black 1px;
+  flex: 0.5;
+}
+
+input.add-item-input:not(:first-child) {
+  background: white;
+  width: fit-content;
+  height: 90%;
+  border-radius: 5px;
+}
+
+.line {
+  text-decoration: line-through;
 }
